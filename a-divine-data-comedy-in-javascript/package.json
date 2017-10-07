@@ -1,0 +1,21 @@
+{
+  "name": "datacomedy",
+  "version": "1.0.0",
+  "description": "Code used in my talk.",
+  "main": "test.js",
+  "scripts": {
+    "test": " mocha -w -R nyan"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MikeMKH/talks/tree/master/a-divine-data-comedy-in-javascript"
+  },
+  "author": "Mike Harris",
+  "license": "ISC",
+  "dependencies": {
+    "folktale": "^2.0.1",
+    "jshint": "^2.9.5",
+    "lodash": "^4.17.4",
+    "mocha": "^4.0.1"
+  }
+}
