@@ -172,23 +172,29 @@ describe('Composing Functions', () => {
       });
     }),
     describe('if context', () => {
-      const w = 'Midway';
-      const f = s => s && s.trim().length > 2 ? s : '';
+      const size = s => {
+        if (s) {
+          return s.trim().length;
+        } else {
+          return 0;
+        }
+      };
       
-      assert.equal(f(w), w);
-      assert.equal(f(' '), '');
-      assert.equal(f(null), '');
+      assert.equal(size('Midway'), 6);
+      assert.equal(size(' '), 0);
+      assert.equal(size(null), 0);
     }),
     describe('Maybe context', () => {
-      const w = 'Midway';
-      const f = s => s && s.trim().length > 2 ? Maybe.Just(s) : Maybe.Nothing();
+      const size = s =>
+        Maybe.fromNullable(s)
+          .map(s => s.trim())
+          .cata({
+            Nothing: _ => 0,
+            Just: t => t.length});
 
-      assert.deepEqual(f(w), Maybe.Just(w));
-      assert.ok(f(w).isEqual(Maybe.Just(w)));
-
-      assert.ok(f(w).isJust);
-      assert.ok(f(' ').isNothing);
-      assert.ok(f(null).isNothing);
+      assert.equal(size('Midway'), 6);
+      assert.equal(size(' '), 0);
+      assert.equal(size(null), 0);
     });
   }),
   describe('Maybe context', () => {
