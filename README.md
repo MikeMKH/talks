@@ -66,7 +66,7 @@ Higher Order Functions defined in terms of the Fold function in JavaScript using
   
   [URL was](http://www.midwest.io/sessions/#tuesday-4a)
   
-  [video] (https://www.youtube.com/watch?v=bzHKp6p-Rlk)
+  [video](https://www.youtube.com/watch?v=bzHKp6p-Rlk)
 * October 24, 2015 at Milwaukee Code Camp
   
   [URL was](http://www.milwaukeecodecamp.com/Session/Details/21)
