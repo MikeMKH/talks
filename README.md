@@ -1,5 +1,14 @@
 # Public Speaking Engagements
 
+## A Divine Data Comedy in JavaScript
+Showing how data flows using examples from TSQL and JavaScript using Lodash and Folktale.
+
+  [slides](https://github.com/MikeMKH/talks/blob/master/a-divine-data-comedy-in-javascript/A%20Divine%20Data%20Comedy%20in%20JavaScript.pdf)
+  
+* October 24, 2017 at MilwaukeeJS Meetup
+
+  [URL was](https://www.meetup.com/milwaukeejs/events/241842096/)
+
 ## A Divine Data Comedy
 Showing how data flows using examples from TSQL and C# using LINQ.
 
