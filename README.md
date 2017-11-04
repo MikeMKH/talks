@@ -1,5 +1,12 @@
 # Public Speaking Engagements
 
+## Falling in Love with Angular All Over Again with the Angular CLI
+Live demo talk of showing how to use the Angular CLI to build, test, and serve an application, along with adding components, services, and route.
+
+* November 11, 2017 at Milwaukee Code Camp
+
+  [URL was](https://www.milwaukeecodecamp.com/session/details/1130)
+
 ## A Divine Data Comedy in JavaScript
 Showing how data flows using examples from TSQL and JavaScript using Lodash and Folktale.
 
