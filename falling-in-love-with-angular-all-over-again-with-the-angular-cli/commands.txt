@@ -1,0 +1,34 @@
+npm install -g @angular/cli
+
+ng --version
+
+ng help | less
+
+ng help new | less
+ng new demo-app --dry-run
+ng new demo-app --routing=true --style=scss --dry-run
+ng new demo-app --skip-tests=true --inline-template=true --inline-style=true --prefix=mke --dry-run
+
+ng new demo-app --routing=true --prefix=mke
+
+cd demo-app
+ng serve --open=true --port=4200
+ng serve -o
+
+code .
+
+ng test --single-run
+
+ng serve -o
+ng test
+
+ng generate component cool-list --dry-run
+ng generate component --help
+ng g c cool-list -d
+ng g c cool-list --inline-style=true --inline-template=true -d
+
+ng g c cool-list
+
+ng g s services/cool -d
+
+ng g s services/cool
