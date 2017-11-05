@@ -2,7 +2,7 @@ npm install -g @angular/cli
 
 ng --version
 
-ng help | less
+ng help --short=true | less
 
 ng help new | less
 ng new demo-app --dry-run
