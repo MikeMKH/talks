@@ -1,0 +1,5 @@
+tf get
+code .
+  ng test
+  ng serve -o
+  ng g what name
