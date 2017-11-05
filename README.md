@@ -3,6 +3,8 @@
 ## Falling in Love with Angular All Over Again with the Angular CLI
 Live demo talk of showing how to use the Angular CLI to build, test, and serve an application, along with adding components, services, and route.
 
+  [slides](https://github.com/MikeMKH/talks/blob/master/falling-in-love-with-angular-all-over-again-with-the-angular-cli/Falling%20in%20Love%20with%20Angular%20All%20Over%20Again%20with%20the%20Angular%20CLI.key)
+
 * November 11, 2017 at Milwaukee Code Camp
 
   [URL was](https://www.milwaukeecodecamp.com/session/details/1130)
