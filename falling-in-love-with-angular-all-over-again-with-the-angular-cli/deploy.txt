@@ -1,0 +1,6 @@
+ng test -sr --progress=false
+ng e2e --progress=false
+ng lint
+ng build -e dev -op dev --progress=false
+ng build -e uat -prod -op uat --progress=false
+ng build -prod -op prod --progress=false
