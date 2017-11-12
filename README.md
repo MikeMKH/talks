@@ -14,6 +14,8 @@ Showing how data flows using examples from TSQL and JavaScript using Lodash and 
 
   [slides](https://github.com/MikeMKH/talks/blob/master/a-divine-data-comedy-in-javascript/A%20Divine%20Data%20Comedy%20in%20JavaScript.pdf)
   
+  [video](https://www.youtube.com/watch?v=kuLArTeq5NQ)
+  
 * October 24, 2017 at MilwaukeeJS Meetup
 
   [URL was](https://www.meetup.com/milwaukeejs/events/241842096/)
