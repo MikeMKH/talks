@@ -1,9 +1,9 @@
 # Public Speaking Engagements
 
 ## On the Commutability of Subtraction - Lightning Talk
-Talk about property testing using JavaScript and Coq.
+Talk about property testing using JavaScript with JSVerify and theorem proving in Coq.
 
-  [slides](https://github.com/MikeMKH/talks/blob/master/on-the-commutability-of-subtraction/On%20the%20Commutability%20of%20Subtraction.key)
+  [repo](https://github.com/MikeMKH/talks/tree/master/on-the-commutability-of-subtraction)
 
 * December 6, 2017 at Milwaukee Functional Programming Meetup
 
@@ -12,7 +12,7 @@ Talk about property testing using JavaScript and Coq.
 ## Falling in Love with Angular All Over Again with the Angular CLI
 Live demo talk of showing how to use the Angular CLI to build, test, and serve an application, along with adding components, services, and route.
 
-  [slides](https://github.com/MikeMKH/talks/blob/master/falling-in-love-with-angular-all-over-again-with-the-angular-cli/Falling%20in%20Love%20with%20Angular%20All%20Over%20Again%20with%20the%20Angular%20CLI.key)
+  [repo](https://github.com/MikeMKH/talks/tree/master/falling-in-love-with-angular-all-over-again-with-the-angular-cli)
 
 * November 11, 2017 at Milwaukee Code Camp
 
@@ -21,7 +21,7 @@ Live demo talk of showing how to use the Angular CLI to build, test, and serve a
 ## A Divine Data Comedy in JavaScript
 Showing how data flows using examples from TSQL and JavaScript using Lodash and Folktale.
 
-  [slides](https://github.com/MikeMKH/talks/blob/master/a-divine-data-comedy-in-javascript/A%20Divine%20Data%20Comedy%20in%20JavaScript.pdf)
+  [repo](https://github.com/MikeMKH/talks/tree/master/a-divine-data-comedy-in-javascript)
   
   [video](https://www.youtube.com/watch?v=kuLArTeq5NQ)
   
