@@ -1,0 +1,14 @@
+{
+  "name": "communtablilityofsubtractions",
+  "version": "1.0.0",
+  "description": "Testing showing that subtraction does not communte",
+  "main": "test.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Mike Harris",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^4.0.1"
+  }
+}
