@@ -1,5 +1,14 @@
 # Public Speaking Engagements
 
+## On the Commutability of Subtraction - Lightning Talk
+Talk about property testing using JavaScript and Coq.
+
+  [slides](https://github.com/MikeMKH/talks/blob/master/on-the-commutability-of-subtraction/On%20the%20Commutability%20of%20Subtraction.key)
+
+* December 6, 2017 at Milwaukee Functional Programming Meetup
+
+  [URL was](https://www.meetup.com/Milwaukee-Functional-Programming-User-Group/events/244514328/)
+  
 ## Falling in Love with Angular All Over Again with the Angular CLI
 Live demo talk of showing how to use the Angular CLI to build, test, and serve an application, along with adding components, services, and route.
 
