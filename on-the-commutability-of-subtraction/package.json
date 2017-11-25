@@ -9,6 +9,7 @@
   "author": "Mike Harris",
   "license": "ISC",
   "dependencies": {
+    "jsverify": "^0.8.3",
     "mocha": "^4.0.1"
   }
 }
