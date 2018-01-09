@@ -1,5 +1,14 @@
 # Public Speaking Engagements
 
+## Beautiful Types - Lightning Talk
+Talk about how dependent types can help guide us as to what a function does.  Examples in Haskell and Idris.
+
+  [repo](https://github.com/MikeMKH/talks/tree/master/beautiful-types)
+
+* January 16, 2018 at Milwaukee Functional Programming Meetup
+
+  [URL was](https://www.meetup.com/Milwaukee-Functional-Programming-User-Group/events/245714110/)
+  
 ## On the Commutability of Subtraction - Lightning Talk
 Talk about property testing using JavaScript with JSVerify and theorem proving in Coq.
 
