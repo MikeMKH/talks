@@ -50,7 +50,7 @@ Showing how data flows using examples from TSQL and C# using LINQ.
 ## Combinators - Lightning Talk
 S, K, and I combinators with an example from C# using MoreLINQ's pipe. Implementations in F# and JavaScript.
 
-  [slides](https://www.slideshare.net/MikeHarris10/combinators-lightning-talk)
+  [repo](https://github.com/MikeMKH/talks/tree/master/combinators-lightning-talk)
 
 * February 21, 2017 at Milwaukee Functional Programming Meetup
   
