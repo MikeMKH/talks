@@ -41,7 +41,7 @@ Showing how data flows using examples from TSQL and JavaScript using Lodash and 
 ## A Divine Data Comedy
 Showing how data flows using examples from TSQL and C# using LINQ.
 
-  [slides](https://www.slideshare.net/secret/ySVlRZU0HF3E8L)
+  [repo](https://github.com/MikeMKH/talks/tree/master/a-divine-data-comedy)
   
 * September 12, 2017 at Wisconsin Dot Net Users Group
 
