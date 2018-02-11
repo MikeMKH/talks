@@ -1,3 +1,3 @@
 # Pattern Matching on the Left
 
-Shows how to use abstraction with pattern matching in Idris with views.
+Shows how to use abstraction along with pattern matching in Idris with views.
