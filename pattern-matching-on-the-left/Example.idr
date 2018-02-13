@@ -1,3 +1,5 @@
+import Data.List.Views
+
 listAreEquivalent : [1, 2, 3] = 1 :: 2 :: 3 :: []
 listAreEquivalent = Refl
 
@@ -12,14 +14,29 @@ headIsFirstElem = Refl
 take1IsSimilarToHead : take 1 [1, 2, 3] = head [1, 2, 3] :: []
 take1IsSimilarToHead = Refl
 
-takeLast : (n : Nat) -> (xs : List a) -> List a
-takeLast n xs = reverse $ take n $ reverse xs
+takeLast' : (n : Nat) -> (xs : List a) -> List a
+takeLast' n xs = reverse $ take n $ reverse xs
 
 lastIsLastElem : 3 = last [1, 2, 3]
 lastIsLastElem = Refl
 
-takeLast1IsSimilarToLast : takeLast 1 [1, 2, 3] = last [1, 2, 3] :: []
+takeLast1IsSimilarToLast : takeLast' 1 [1, 2, 3] = last [1, 2, 3] :: []
 takeLast1IsSimilarToLast = Refl
 
+takeLast : (n : Nat) -> List a -> List a
+takeLast n xs with (snocList xs)
+  takeLast Z [] | Empty = []
+  takeLast Z (ys ++ [x]) | (Snoc rec) = []
+  takeLast (S k) [] | Empty = []
+  takeLast (S k) (ys ++ [x]) | (Snoc rec) = takeLast k ys ++ [x] | rec
 
+takeLastAreEquivalent : takeLast' 2 [1, 2, 3] = takeLast 2 [1, 2, 3] 
+takeLastAreEquivalent = Refl
 
+snocListHelp : SnocList xs -> (ys : List a) -> SnocList (xs ++ ys)
+snocListHelp {xs} x [] = rewrite appendNilRightNeutral xs in x
+snocListHelp {xs} x (y :: ys) 
+   = rewrite appendAssociative xs [y] ys in snocListHelp (Snoc x) ys
+
+snocList : (xs : List a) -> SnocList xs
+snocList xs = snocListHelp Empty xs
