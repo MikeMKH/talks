@@ -29,6 +29,6 @@ takeLast n xs with (snocList xs)
   takeLast Z (ys ++ [x]) | (Snoc rec) = []
   takeLast (S k) [] | Empty = []
   takeLast (S k) (ys ++ [x]) | (Snoc rec) = takeLast k ys ++ [x] | rec
-  
--- takeLastAreEquivalent : takeLast' 2 [1, 2, 3] = takeLast 2 [1, 2, 3]
--- takeLastAreEquivalent = Refl
+
+-- takeLastsAreEquivalent : takeLast' 2 [1, 2, 3] = takeLast 2 [1, 2, 3]
+-- takeLastsAreEquivalent = Refl
