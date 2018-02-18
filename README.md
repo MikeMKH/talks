@@ -1,5 +1,15 @@
 # Public Speaking Engagements
 
+
+## Pattern Matching on Left - Lightning Talk
+Shows how to use abstraction along with pattern matching in Idris using views.
+
+  [repo](https://github.com/MikeMKH/talks/tree/master/pattern-matching-on-the-left)
+
+* February 20, 2018 at Milwaukee Functional Programming Meetup
+
+  [URL was](https://www.meetup.com/Milwaukee-Functional-Programming-User-Group/events/246907780/)
+  
 ## Beautiful Types - Lightning Talk
 Talk about how dependent types can help guide us as to what a function does.  Examples in Haskell and Idris.
 
