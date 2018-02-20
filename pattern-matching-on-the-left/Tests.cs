@@ -7,10 +7,10 @@ namespace Tests
   public class Tests
   {
     [Fact]
-    public void GivenCollectionWeCanIteratorThroughIt()
+    public void GivenCollectionWeCanIterateThroughIt()
     {
-      IEnumerable<int> coll = new HashSet<int>() { 1, 2, 3 };
-      IEnumerator<int> iterator = coll.GetEnumerator();
+      IEnumerable<int> col = new HashSet<int>() { 1, 2, 3 };
+      IEnumerator<int> iterator = col.GetEnumerator();
 
       var results = new LinkedList<int>();
       while (iterator.MoveNext())
@@ -18,7 +18,7 @@ namespace Tests
         results.AddLast(iterator.Current);
       }
 
-      Assert.Equal(results, coll);
+      Assert.Equal(results, col);
     }
   }
 }
