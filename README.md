@@ -1,7 +1,7 @@
 # Public Speaking Engagements
 
 
-## Pattern Matching on Left - Lightning Talk
+## Pattern Matching on the Left - Lightning Talk
 Shows how to use abstraction along with pattern matching in Idris using views.
 
   [repo](https://github.com/MikeMKH/talks/tree/master/pattern-matching-on-the-left)
