@@ -4,7 +4,7 @@ using System.Collections.Immutable;
 using System.Linq;
 using Xunit;
 
-// dotnet watch test
+// cd test/; dotnet watch test
 namespace test
 {
     public class Example
@@ -57,6 +57,71 @@ namespace test
                     .Aggregate(0.0, (sub, amount) => sub + amount);
                   
                 return total;
+            }
+        }
+        
+        [Fact]
+        public void Map()
+        {
+            Assert.Equal(
+                Map(order => order.price * order.quantity, orders),
+                orders.Select(order => order.price * order.quantity)
+            );
+            
+            IEnumerable<U> Map<T, U>(
+                Func<T, U> mapping, IEnumerable<T> source)
+            {
+                var result = new List<U>();
+                foreach(var item in source)
+                {
+                    result.Add(mapping(item));
+                }
+                
+                return result;
+            }
+        }
+        
+        [Fact]
+        public void Filter()
+        {
+            Assert.Equal(
+                Filter(order => order.zip == 53202, orders),
+                orders.Where(order => order.zip == 53202)
+            );
+            
+            IEnumerable<T> Filter<T>(
+                Func<T, bool> predicate, IEnumerable<T> source)
+            {
+                var result = new List<T>();
+                foreach(var item in source)
+                {
+                    if (predicate(item))
+                    result.Add(item);
+                }
+                
+                return result;
+            }
+        }
+        
+        [Fact]
+        public void Fold()
+        {
+            Assert.Equal(
+                Fold((sub, order) => sub + order.price, 0.0, orders),
+                orders.Aggregate(0.0, (sub, order) => sub + order.price)
+            );
+            
+            U Fold<T, U>(
+                Func<U, T, U> accumulate, U initial,
+                IEnumerable<T> source)
+            {
+                var result = initial;
+                foreach(var item in source)
+                {
+                    result = accumulate(result, item);
+                }
+                
+                return result;
             }
         }
     }
