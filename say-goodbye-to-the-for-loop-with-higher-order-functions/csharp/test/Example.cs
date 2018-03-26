@@ -9,7 +9,7 @@ namespace test
 {
     public class Example
     {
-        IImmutableList<(int zip, double price, int quantity)> orders =
+        IImmutableList<(int Zip, double Price, int Quantity)> orders =
             ImmutableList.Create(
                 (53202, 1.89, 3),
                 (60191, 1.99, 2),
@@ -30,8 +30,8 @@ namespace test
                 var total = 0.0;
                 for (int i = 0; i < orders.Count(); i++)
                 {
-                    if (orders[i].zip == 53202)
-                        total += orders[i].price * orders[i].quantity;     
+                    if (orders[i].Zip == 53202)
+                        total += orders[i].Price * orders[i].Quantity;     
                 }
                 
                 return total;
@@ -42,8 +42,8 @@ namespace test
                 var total = 0.0;
                 foreach (var order in orders)
                 {
-                    if (order.zip == 53202)
-                        total += order.price * order.quantity;
+                    if (order.Zip == 53202)
+                        total += order.Price * order.Quantity;
                 }
 
                 return total;
@@ -52,8 +52,8 @@ namespace test
             double HigherOrderFunctions()
             {
                 var total = orders
-                    .Where(order => order.zip == 53202)
-                    .Select(order => order.price * order.quantity)
+                    .Where(order => order.Zip == 53202)
+                    .Select(order => order.Price * order.Quantity)
                     .Aggregate(0.0, (sub, amount) => sub + amount);
                   
                 return total;
@@ -64,8 +64,8 @@ namespace test
         public void Map()
         {
             Assert.Equal(
-                Map(order => order.price * order.quantity, orders),
-                orders.Select(order => order.price * order.quantity)
+                Map(order => order.Price * order.Quantity, orders),
+                orders.Select(order => order.Price * order.Quantity)
             );
             
             IEnumerable<U> Map<T, U>(
@@ -85,8 +85,8 @@ namespace test
         public void Filter()
         {
             Assert.Equal(
-                Filter(order => order.zip == 53202, orders),
-                orders.Where(order => order.zip == 53202)
+                Filter(order => order.Zip == 53202, orders),
+                orders.Where(order => order.Zip == 53202)
             );
             
             IEnumerable<T> Filter<T>(
@@ -107,8 +107,8 @@ namespace test
         public void Fold()
         {
             Assert.Equal(
-                Fold((sub, order) => sub + order.price, 0.0, orders),
-                orders.Aggregate(0.0, (sub, order) => sub + order.price)
+                Fold((sub, order) => sub + order.Price, 0.0, orders),
+                orders.Aggregate(0.0, (sub, order) => sub + order.Price)
             );
             
             U Fold<T, U>(
