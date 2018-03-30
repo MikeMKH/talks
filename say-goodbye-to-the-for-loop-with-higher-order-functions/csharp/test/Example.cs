@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -57,6 +58,24 @@ namespace test
                     .Aggregate(0.0, (sub, amount) => sub + amount);
                   
                 return total;
+            }
+        }
+        
+        [Fact]
+        public void IteratorPattern()
+        {
+            var result = new List<(int Zip, double Price, int Quantity)>();
+            
+            Iterate(order => result.Add(order), orders.GetEnumerator());
+            
+            Assert.Equal(orders, result);
+            
+            void Iterate<T>(Action<T> f, IEnumerator<T> source)
+            {
+                while(source.MoveNext())
+                {
+                    f(source.Current);
+                }
             }
         }
         
@@ -123,6 +142,28 @@ namespace test
                 
                 return result;
             }
+        }
+        
+        [Fact]
+        public void SpyOnHigherOrderFunctions()
+        {
+            var spy = new List<string>();
+
+            orders
+                .Where(order => { spy.Add("filter"); return order.Zip == 53202; })
+                .Select(order => { spy.Add("map"); return order.Price * order.Quantity; })
+                .Aggregate(0.0, (sub, amount) => { spy.Add("fold"); return sub + amount; });
+                
+            Assert.Equal(
+                new List<string> {
+                    "filter", "map", "fold",
+                    "filter",
+                    "filter",
+                    "filter", "map", "fold",
+                    "filter",
+                    "filter", "map", "fold"
+                },
+                spy);
         }
     }
 }
