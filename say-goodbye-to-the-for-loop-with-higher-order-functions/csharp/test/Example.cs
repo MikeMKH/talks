@@ -8,7 +8,58 @@ using Xunit;
 // cd test/; dotnet watch test
 namespace test
 {
-    public class Example
+    public static class ExampleExt
+    {
+        public static void Iterate<T>(
+            this IEnumerator<T> source, Action<T> f)
+        {
+            while(source.MoveNext())
+            {
+                f(source.Current);
+            }
+        }
+        
+        public static IEnumerable<U> Map<T, U>(
+            this IEnumerable<T> source, Func<T, U> mapping)
+        {
+            var result = new List<U>();
+            foreach(var item in source)
+            {
+                result.Add(mapping(item));
+            }
+            
+            return result;
+        }
+        
+        public static IEnumerable<T> Filter<T>(
+            this IEnumerable<T> source, Func<T, bool> predicate)
+        {
+            var result = new List<T>();
+            foreach(var item in source)
+            {
+                if (predicate(item))
+                result.Add(item);
+            }
+            
+            return result;
+        }
+        
+        public static U Fold<T, U>(
+            this IEnumerable<T> source,
+            U initial,
+            Func<U, T, U> accumulate)
+        {
+            var result = initial;
+            foreach(var item in source)
+            {
+                result = accumulate(result, item);
+            }
+            
+            return result;
+        }
+    }
+    
+    public class ExampleTests
     {
         IImmutableList<(int Zip, double Price, int Quantity)> orders =
             ImmutableList.Create(
@@ -66,82 +117,37 @@ namespace test
         {
             var result = new List<(int Zip, double Price, int Quantity)>();
             
-            Iterate(order => result.Add(order), orders.GetEnumerator());
+            orders.GetEnumerator()
+              .Iterate(order => result.Add(order));
             
             Assert.Equal(orders, result);
-            
-            void Iterate<T>(Action<T> f, IEnumerator<T> source)
-            {
-                while(source.MoveNext())
-                {
-                    f(source.Current);
-                }
-            }
         }
         
         [Fact]
         public void Map()
         {
             Assert.Equal(
-                Map(order => order.Price * order.Quantity, orders),
+                orders.Map(order => order.Price * order.Quantity),
                 orders.Select(order => order.Price * order.Quantity)
             );
-            
-            IEnumerable<U> Map<T, U>(
-                Func<T, U> mapping, IEnumerable<T> source)
-            {
-                var result = new List<U>();
-                foreach(var item in source)
-                {
-                    result.Add(mapping(item));
-                }
-                
-                return result;
-            }
         }
         
         [Fact]
         public void Filter()
         {
             Assert.Equal(
-                Filter(order => order.Zip == 53202, orders),
+                orders.Filter(order => order.Zip == 53202),
                 orders.Where(order => order.Zip == 53202)
             );
-            
-            IEnumerable<T> Filter<T>(
-                Func<T, bool> predicate, IEnumerable<T> source)
-            {
-                var result = new List<T>();
-                foreach(var item in source)
-                {
-                    if (predicate(item))
-                    result.Add(item);
-                }
-                
-                return result;
-            }
         }
         
         [Fact]
         public void Fold()
         {
             Assert.Equal(
-                Fold((sub, order) => sub + order.Price, 0.0, orders),
+                orders.Fold(0.0, (sub, order) => sub + order.Price),
                 orders.Aggregate(0.0, (sub, order) => sub + order.Price)
             );
-            
-            U Fold<T, U>(
-                Func<U, T, U> accumulate, U initial,
-                IEnumerable<T> source)
-            {
-                var result = initial;
-                foreach(var item in source)
-                {
-                    result = accumulate(result, item);
-                }
-                
-                return result;
-            }
         }
         
         [Fact]
@@ -164,6 +170,24 @@ namespace test
                     "filter", "map", "fold"
                 },
                 spy);
+        }
+        
+        [Fact]
+        public void ListComprehension()
+        {
+            var comprehension = 
+              (from order in orders
+               where order.Zip == 53202
+               select new {Amount = order.Price * order.Quantity})
+              .Sum(order => order.Amount);
+              
+            var fluent =
+              orders
+                .Where(order => order.Zip == 53202)
+                .Select(order => order.Price * order.Quantity)
+                .Sum(amount => amount);
+                         
+            Assert.Equal(comprehension, fluent);
         }
     }
 }
