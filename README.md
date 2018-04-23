@@ -1,10 +1,14 @@
 # Public Speaking Engagements
 
 ## Say Goodbye to the For Loop with Higher Order Functions
-How to convert for loops into Map, Filter, and Fold in C# and F#.
+How to convert for loops into Map, Filter, and Fold in C#.
 
   [repo](https://github.com/MikeMKH/talks/tree/master/say-goodbye-to-the-for-loop-with-higher-order-functions)
 
+* August 6, 2018 at That Conference
+
+  [URL was](https://www.thatconference.com/sessions/session/12315)
+  
 * April 21, 2018 at Twin Cities Code Camp
 
   [URL was](https://twincitiescodecamp.com/#/talks/828)
