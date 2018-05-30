@@ -1,5 +1,5 @@
 # 5 Levels of Testing
 
-Examples of testing with F# with xUnit and FSCheck and modeling a function with Idris.
+Examples of testing with F# with xUnit and FSCheck and modeling a function with Idris, conclusion use built-ins first.
 
 Talk about the "5 levels" of testing based on this [meme](https://twitter.com/DavidKPiano/status/988479847352750080).
