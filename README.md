@@ -1,5 +1,14 @@
 # Public Speaking Engagements
 
+## 5 Levels of Testing
+Examples of testing with F# with xUnit and FSCheck and modeling a function with Idris, conclusion use built-ins first.
+
+  [repo](https://github.com/MikeMKH/talks/tree/master/5-levels-of-testing)
+
+* June 5, 2018 at Milwaukee Functional Programming Meetup
+
+  [URL was](https://www.meetup.com/Milwaukee-Functional-Programming-User-Group/events/250986577/)
+
 ## Say Goodbye to the For Loop with Higher Order Functions
 How to convert for loops into Map, Filter, and Fold in C#.
 
