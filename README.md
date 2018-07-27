@@ -45,6 +45,10 @@ Talk about property testing using JavaScript with JSVerify and theorem proving i
 
   [repo](https://github.com/MikeMKH/talks/tree/master/on-the-commutability-of-subtraction)
 
+* August 28, 2018 at MilwaukeeJS Meetup
+
+  [URL was](https://www.meetup.com/milwaukeejs/events/248803088/)
+  
 * December 6, 2017 at Milwaukee Functional Programming Meetup
 
   [URL was](https://www.meetup.com/Milwaukee-Functional-Programming-User-Group/events/244514328/)
