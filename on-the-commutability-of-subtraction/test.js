@@ -2,7 +2,7 @@ let assert = require('assert');
 let jsc = require('jsverify');
 
 describe('Subtraction', () => {
-  describe('commutes for 0', () => {
+  describe('commutes', () => {
     it('0 - 0 === 0 - 0', () => {
       assert.deepEqual(0 - 0, 0 - 0);
     });
