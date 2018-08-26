@@ -1,6 +1,6 @@
 {
   "name": "communtablilityofsubtractions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Testing showing that subtraction does not communte",
   "main": "test.js",
   "scripts": {
@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "jsverify": "^0.8.3",
-    "mocha": "^4.0.1"
+    "mocha": "^4.1.0"
   }
 }
