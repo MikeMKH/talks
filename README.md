@@ -1,5 +1,14 @@
 # Public Speaking Engagements
 
+## Recursion - Lather. Rinse. Repeat.
+Introduction to recursive data types, structual recursion, and general recursive functions with examples in Racket.
+
+  [repo](https://github.com/MikeMKH/talks/tree/master/recursion-lather-rinse-repeat)
+
+* November 10, 2018 at Milwaukee Code Camp
+
+  [URL was](https://www.milwaukeecodecamp.com/session/details/1184)
+
 ## 5 Levels of Testing
 Examples of testing with F# with xUnit and FSCheck and modeling a function with Idris, conclusion use built-ins first.
 
