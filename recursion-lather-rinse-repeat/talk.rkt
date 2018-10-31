@@ -39,7 +39,7 @@
  (plus-5 42)
  47)
 
-; list
+; list - constructors
 ; - (cons value list)
 ; - '()
 
@@ -53,10 +53,36 @@
              (cons 3 '())))
  '(1 2 3))
 
-; peano number
+; list - selectors
+; - (first (cons value list)) ; value
+; - (rest  (cons value list)) ; list
+
+(check-expect
+ (first (cons 1 '()))
+ 1)
+
+(check-expect
+ (first '(1))
+ 1)
+
+(check-expect
+ (rest (cons 1 '()))
+ '())
+
+(check-expect
+ (rest '(1))
+ '())
+
+; list - predicates
+; - (empty? '()) ; #true
+
+(check-satisfied
+ '()
+ empty?)
+
+; nat - constructors
 ; - 0
-; - (add1 peano)
-; - (sub1 peano)
+; - (add1 nat)
 
 (check-expect
  (zero? 0)
@@ -68,12 +94,22 @@
    (add1 0)))
  3)
 
+; nat - selectors
+; - (sub1 (add1 nat)) ; nat
+
 (check-expect
  (sub1
   (add1
    (add1 0)))
- 1)
+ (add1 0))
 
 (check-expect
  (sub1 2)
  1)
+
+; nat - predicates
+; - (zero? 0) ; #true
+
+(check-expect
+ (zero? 0)
+ #true)
