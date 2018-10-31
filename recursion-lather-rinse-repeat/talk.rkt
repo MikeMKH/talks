@@ -54,8 +54,8 @@
  '(1 2 3))
 
 ; list - selectors
-; - (first (cons value list)) ; value
-; - (rest  (cons value list)) ; list
+; - first : list -> value
+; - rest  : list -> list
 
 (check-expect
  (first (cons 1 '()))
@@ -74,7 +74,7 @@
  '())
 
 ; list - predicates
-; - (empty? '()) ; #true
+; - empty? : list -> boolean
 
 (check-satisfied
  '()
@@ -95,7 +95,7 @@
  3)
 
 ; nat - selectors
-; - (sub1 (add1 nat)) ; nat
+; - sub1 : nat -> nat
 
 (check-expect
  (sub1
@@ -108,8 +108,8 @@
  1)
 
 ; nat - predicates
-; - (zero? 0) ; #true
+; - zero? : nat -> boolean
 
-(check-expect
- (zero? 0)
- #true)
+(check-satisfied
+ 0
+ zero?)
