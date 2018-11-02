@@ -126,34 +126,58 @@
 ; (plus 0 b) ; b
 ; (plus a 0) ; a
 ; (plus a b) ; a + b
-; basis: (zero? a)
-; induction: (plus (sub1 a) (add1 b))
+; principal: a
+; basis:     zero?
+; reducer:   sub1
+; combine:   add1
 (define (plus a b)
   (cond
     [(zero? a) b]
     [else
-     (plus (sub1 a)
-           (add1 b))]))
+     (add1
+      (plus (sub1 a) b))]))
 
 (check-satisfied
  (plus 0 0)
  zero?)
 
 (check-expect
+ (plus
+  0
+  (add1 (add1 0)))
+ (add1 (add1 0)))
+
+(check-expect
  (plus 0 2)
  2)
+
+(check-expect
+ (plus
+  (add1 0)
+  0)
+ (add1 0))
 
 (check-expect
  (plus 1 0)
  1)
 
 (check-expect
+ (plus
+  (add1 0)
+  (add1 (add1 0)))
+ (add1 (add1 (add1 0))))
+
+(check-expect
  (plus 1 2)
  3)
 
 (check-expect
- (plus (add1 0) (add1 (add1 0)))
- (add1 (add1 (add1 0))))
+ (plus
+  (add1 0)
+  (add1 (add1 0)))
+ (plus
+  0
+  (add1 (add1 (add1 0)))))
 
 ; take : nat -> list -> list
 ; (take 0 l) ; '()
@@ -161,9 +185,10 @@
 ; (take n '()) ; '()
 ; (take n l of size > n) ; l of size n
 ; (take n l of size < n) ; l
-; basis: (zero? n)
-; basis: (empty? l)
-; induction: (take (sub1 n) (rest l))
+; principal: n     / l
+; basis:     zero? / empty?
+; reducer:   sub1  / rest
+; combine:   cons
 (define (take n l)
   (cond
     [(zero? n) '()]
@@ -186,12 +211,47 @@
  empty?)
 
 (check-expect
+ (take
+  (add1 (add1 0))
+  (cons 1 (cons 2 (cons 3 '()))))
+ (cons 1 (cons 2 '())))
+
+(check-expect
  (take 2 '(1 2 3))
  '(1 2))
 
 (check-expect
+ (take
+  (add1 (add1 0))
+  '(1 2 3))
+ (cons (first '(1 2 3))
+       (cons (first '(2 3))
+             '())))
+
+(check-expect
+ (take
+  (add1 (add1 (add1 (add1 (add1 0)))))
+  (cons 1 (cons 2 (cons 3 '()))))
+ (cons 1 (cons 2 (cons 3 '()))))
+
+(check-expect
  (take 5 '(1 2 3))
  '(1 2 3))
+
+(check-expect
+ (take 5 '(1 2 3))
+ (cons (first '(1 2 3))
+       (cons (first '(2 3))
+             (cons (first '(3))
+                   '()))))
+
+(check-expect
+ (take
+  (add1 (add1 (add1 (add1 (add1 0)))))
+  (cons 1 (cons 2 (cons 3 '()))))
+ (take
+  (add1 (add1 (add1 0)))
+  (cons 1 (cons 2 (cons 3 '())))))
 
 ; drop : nat -> list -> list
 ; (drop 0 l) ; l
@@ -199,9 +259,10 @@
 ; (drop n '()) ; '()
 ; (drop n l of size n + m) ; l of size m
 ; (drop n l of size < n) ; '()
-; basis: (zero? n)
-; basis: (empty? l)
-; induction: (drop (sub1 n) (rest l))
+; principal: n     / l
+; basis:     zero? / empty?
+; reducer:   sub1  / rest
+; combine:   none
 (define (drop n l)
   (cond
     [(zero? n) l]
@@ -209,6 +270,12 @@
     [else
      (drop (sub1 n)
            (rest l))]))
+
+(check-expect
+ (drop
+  0
+  (cons 1 (cons 2 (cons 3 '()))))
+ (cons 1 (cons 2 (cons 3 '()))))
 
 (check-expect
  (drop 0 '(1 2 3))
@@ -223,9 +290,31 @@
  empty?)
 
 (check-expect
+ (drop
+  (add1 (add1 0))
+  (cons 1 (cons 2 (cons 3 '()))))
+ (cons 3 '()))
+
+(check-expect
  (drop 2 '(1 2 3))
  '(3))
+
+(check-expect
+ (drop
+  (add1 (add1 0))
+  (cons 1 (cons 2 (cons 3 '()))))
+ (drop
+  0
+  (cons 3 '())))
 
 (check-satisfied
  (drop 5 '(1 2 3))
  empty?)
+
+(check-expect
+ (drop
+  (add1 (add1 (add1 (add1 (add1 0)))))
+  (cons 1 (cons 2 (cons 3 '()))))
+ (drop
+  (add1 (add1 0))
+  '()))
