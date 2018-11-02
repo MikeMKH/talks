@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname talk) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname talk) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 (define-struct title [main sub])
 (define-struct author [name twitter])
 (define-struct presentation [title author])
@@ -337,3 +337,46 @@
  (drop
   (add1 (add1 0))
   '()))
+
+; bundle : nat -> list -> list
+; (bundle 0 l) ; '()
+; (bundle 0 '()) ; '()
+; (bundle n '()) ; '()
+; (bundle n l of size n * m) ; '(l of size m, ...)
+; (bundle n l of size n * m + p) ; '(l of size m, ..., l of size p)
+; (bundle n l of size < n) ; '(l)
+; principal: l
+; basis:     zero? / empty?
+; reducer:   take n
+; combine:   cons
+(define (bundle n l)
+  (cond
+    [(zero? n) '()]
+    [(empty? l) '()]
+    [else
+     (cons (take n l)
+      (bundle n (drop n l)))]))
+
+(check-satisfied
+ (bundle 0 '(1 2 3))
+ empty?)
+
+(check-satisfied
+ (bundle 0 '())
+ empty?)
+
+(check-satisfied
+ (bundle 2 '())
+ empty?)
+
+(check-expect
+ (bundle 2 '(1 2 3 4))
+ '((1 2) (3 4)))
+
+(check-expect
+ (bundle 3 '(1 2 3 4 5 6 7))
+ '((1 2 3) (4 5 6) (7)))
+
+(check-expect
+ (bundle 3 '(1 2))
+ '((1 2)))
