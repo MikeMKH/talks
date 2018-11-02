@@ -16,9 +16,21 @@
 (define talk
   (make-presentation
    (make-title
-    "Recursion" "Lather. Rinse. Repeat.")
+    "Recursion"
+    "Lather. Rinse. Repeat.")
    (make-author
     "Mike Harris" "@MikeMKH")))
+
+(define-struct joke [statement punch-line])
+
+(define programmer-recursive-joke
+  (make-joke
+   "Why did the programmer run out of shampoo?"
+   "The instructions said: lather, rinse, repeat."))
+
+(check-expect
+ (joke-statement programmer-recursive-joke)
+ "Why did the programmer run out of shampoo?")
 
 (define-struct agenda [list-of-topics])
 
@@ -121,6 +133,12 @@
     "function definition"
     "tests"))
 
+(define recusive-process
+  '("identify principal"
+    "test basis"
+    "reduced recursion"
+    "combine results"))
+
 ; plus : nat -> nat -> nat
 ; (plus 0 0) ; 0
 ; (plus 0 b) ; b
@@ -135,7 +153,8 @@
     [(zero? a) b]
     [else
      (add1
-      (plus (sub1 a) b))]))
+      (plus (sub1 a)
+            b))]))
 
 (check-satisfied
  (plus 0 0)
@@ -211,14 +230,14 @@
  empty?)
 
 (check-expect
+ (take 2 '(1 2 3))
+ '(1 2))
+
+(check-expect
  (take
   (add1 (add1 0))
   (cons 1 (cons 2 (cons 3 '()))))
  (cons 1 (cons 2 '())))
-
-(check-expect
- (take 2 '(1 2 3))
- '(1 2))
 
 (check-expect
  (take
@@ -229,14 +248,14 @@
              '())))
 
 (check-expect
+ (take 5 '(1 2 3))
+ '(1 2 3))
+
+(check-expect
  (take
   (add1 (add1 (add1 (add1 (add1 0)))))
   (cons 1 (cons 2 (cons 3 '()))))
  (cons 1 (cons 2 (cons 3 '()))))
-
-(check-expect
- (take 5 '(1 2 3))
- '(1 2 3))
 
 (check-expect
  (take 5 '(1 2 3))
