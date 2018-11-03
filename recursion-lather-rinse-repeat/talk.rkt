@@ -42,7 +42,7 @@
  (make-agenda
   '("Recursive Data Type"
     "Structural Recursion"
-    "Generative Recursion")))
+    "General Recursion")))
 
 (define (plus-5 n)
   (+ n 5))
