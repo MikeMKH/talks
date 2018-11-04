@@ -1,6 +1,10 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname talk) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+(define talk-goals
+  '("intro to solving problems with recursion"
+    "help in understanding FP examples"))
+
 (define-struct title [main sub])
 (define-struct author [name twitter])
 (define-struct presentation [title author])
@@ -20,17 +24,6 @@
     "Lather. Rinse. Repeat.")
    (make-author
     "Mike Harris" "@MikeMKH")))
-
-(define-struct joke [statement punch-line])
-
-(define programmer-recursive-joke
-  (make-joke
-   "Why did the programmer run out of shampoo?"
-   "The instructions said: lather, rinse, repeat."))
-
-(check-expect
- (joke-statement programmer-recursive-joke)
- "Why did the programmer run out of shampoo?")
 
 (define-struct agenda [list-of-topics])
 
@@ -380,3 +373,16 @@
 (check-expect
  (bundle 3 '(1 2))
  '((1 2)))
+
+; in closing
+
+(define-struct joke [statement punch-line])
+
+(define programmer-recursive-joke
+  (make-joke
+   "Why did the programmer run out of shampoo?"
+   "The instructions said: lather, rinse, repeat."))
+
+(check-expect
+ (joke-statement programmer-recursive-joke)
+ "Why did the programmer run out of shampoo?")
