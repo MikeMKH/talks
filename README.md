@@ -1,10 +1,23 @@
 # Public Speaking Engagements
 
+## Why Do Developers Have Two Keyboards?
+Stories about how to add feedback to your work.
+
+  [repo](https://github.com/MikeMKH/talks/tree/master/why-do-developers-have-two-keyboards)
+
+* October 17, 2019 at Deliver
+
+  [URL was](http://www.prdcdeliver.com/Sessions)
+  
 ## Recursion - Lather. Rinse. Repeat.
 Introduction to recursive data types, structual recursion, and general recursive functions with examples in Racket.
 
   [repo](https://github.com/MikeMKH/talks/tree/master/recursion-lather-rinse-repeat)
 
+* October 16, 2019 at Deliver
+
+  [URL was](http://www.prdcdeliver.com/Sessions)
+  
 * November 10, 2018 at Milwaukee Code Camp
 
   [URL was](https://www.milwaukeecodecamp.com/session/details/1184)
