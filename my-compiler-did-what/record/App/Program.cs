@@ -52,3 +52,13 @@ namespace App
         }
     }
 }
+/*
+ Class record.
+        mikeRecord=PersonRecord { FirstName = Mike, LastName = Harris }
+        Hello Mike!
+        Same old Mike.
+Class example.
+        mikeClass=App.PersonClass
+        Hello Mike!
+        You have changed Mike.
+ */
