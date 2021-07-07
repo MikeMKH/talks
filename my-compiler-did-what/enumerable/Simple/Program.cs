@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-var sequence = new Fibonacci(-2);
+var sequence = new EnumerableFibonacci(-2);
 foreach (var n in sequence.Take(10))
 {
     Console.Write($"{n}, ");
@@ -28,7 +28,7 @@ Console.WriteLine($"{sequence.ElementAt(10)}");
 }
 */
 
-public class Fibonacci : IEnumerable<int>, IEnumerable, IEnumerator<int>, IEnumerator, IDisposable
+public class EnumerableFibonacci : IEnumerable<int>, IEnumerable, IEnumerator<int>, IEnumerator, IDisposable
 {
 	private int _state;
 	private int _current;
@@ -53,7 +53,7 @@ public class Fibonacci : IEnumerable<int>, IEnumerable, IEnumerator<int>, IEnume
 		}
 	}
 
-	public Fibonacci(int state)
+	public EnumerableFibonacci(int state)
 	{
 		this._state = state;
 		_initialThreadId = Environment.CurrentManagedThreadId;
@@ -65,31 +65,30 @@ public class Fibonacci : IEnumerable<int>, IEnumerable, IEnumerator<int>, IEnume
 
 	private bool MoveNext()
 	{
+		const int ERROR = -1;
 		switch (_state)
 		{
 			default:
 				return false;
 			case 0:
-				// seed
-				_state = -1;
+				// initial
+				_state = ERROR;
 				_current = 0;  // Fibonacci(0)
 				_state = 1;
 				return true;
 			case 1:
 				// 1st
-				_state = -1;
+				_state = ERROR;
 				value = 1;    // Fibonacci(1)
 				next = 1;     // Fibonacci(2)
 				break;
 			case 2:
-				{
-					// rest
-					_state = -1;
-					int num = value;
-					value = next;
-					next += num;
-					break;
-				}
+				// rest
+				_state = ERROR;
+				int temp = value;
+				value = next;
+				next += temp;
+				break;
 		}
 		_current = value;
 		_state = 2;
@@ -113,7 +112,7 @@ public class Fibonacci : IEnumerable<int>, IEnumerable, IEnumerator<int>, IEnume
 			_state = 0;
 			return this;
 		}
-		return new Fibonacci(0);
+		return new EnumerableFibonacci(0);
 	}
 
 	IEnumerator IEnumerable.GetEnumerator()
