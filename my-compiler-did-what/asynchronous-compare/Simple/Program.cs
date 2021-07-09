@@ -90,8 +90,6 @@ struct Program : IAsyncStateMachine
 	}
 }
 
-
-
 /*
  * static async Task<T> IdentityAsync<T>(T x) => x;
  */
