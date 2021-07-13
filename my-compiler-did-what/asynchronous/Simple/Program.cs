@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -9,7 +10,8 @@ using System.Runtime.InteropServices;
 var stateMachine = default(Program);
 stateMachine._builder = AsyncTaskMethodBuilder.Create();
 stateMachine._state = -1;
-stateMachine._builder.Start(ref stateMachine);
+Console.WriteLine($"[Main.Start] ThreadId={Thread.CurrentThread.ManagedThreadId}");
+stateMachine._builder.Start(ref stateMachine); // Program.MoveNext()
 stateMachine._builder.Task.GetAwaiter().GetResult();
 
 [StructLayout(LayoutKind.Auto)]
@@ -29,7 +31,8 @@ struct Program : IAsyncStateMachine
 		stateMachine._builder = AsyncTaskMethodBuilder.Create();
 		stateMachine.delay = delay;
 		stateMachine._state = -1;
-		stateMachine._builder.Start(ref stateMachine);
+		Console.WriteLine($"[Program.Start] ThreadId={Thread.CurrentThread.ManagedThreadId}");
+		stateMachine._builder.Start(ref stateMachine); // PrintAndWaitAsync.MoveNext()
 		return stateMachine._builder.Task;
 	}
 
@@ -38,6 +41,8 @@ struct Program : IAsyncStateMachine
 	 */
 	public void MoveNext()
 	{
+		Console.WriteLine($"[Program.MoveNext] ThreadId={Thread.CurrentThread.ManagedThreadId} state={_state}");
+
 		int num = _state;
 		try
 		{
@@ -49,6 +54,7 @@ struct Program : IAsyncStateMachine
 				{
 					num = (_state = 0);
 					_awaiter = awaiter;
+					Console.WriteLine($"[Program.AwaitUnsafeOnCompleted] ThreadId={Thread.CurrentThread.ManagedThreadId} state={_state}");
 					_builder.AwaitUnsafeOnCompleted(ref awaiter, ref this);
 					return;
 				}
@@ -77,6 +83,7 @@ struct Program : IAsyncStateMachine
 
 	private void SetStateMachine(IAsyncStateMachine stateMachine)
 	{
+		Console.WriteLine($"[Program.SetStateMachine] ThreadId={Thread.CurrentThread.ManagedThreadId} state={_state}");
 		_builder.SetStateMachine(stateMachine);
 	}
 
@@ -108,6 +115,8 @@ struct PrintAndWaitAsync : IAsyncStateMachine
 	*/
 	private void MoveNext()
 	{
+		Console.WriteLine($"[PrintAndWaitAsync.MoveNext] ThreadId={Thread.CurrentThread.ManagedThreadId} state={_state}");
+
 		int num = _state;
 		try
 		{
@@ -127,6 +136,7 @@ struct PrintAndWaitAsync : IAsyncStateMachine
 				{
 					num = (_state = 0);
 					_awaiter = awaiter;
+					Console.WriteLine($"[Program.AwaitUnsafeOnCompleted] ThreadId={Thread.CurrentThread.ManagedThreadId} state={_state}");
 					_builder.AwaitUnsafeOnCompleted(ref awaiter, ref this);
 					return;
 				}
@@ -144,6 +154,7 @@ struct PrintAndWaitAsync : IAsyncStateMachine
 			{
 				num = (_state = 1);
 				_awaiter = awaiter;
+				Console.WriteLine($"[Program.AwaitUnsafeOnCompleted] ThreadId={Thread.CurrentThread.ManagedThreadId} state={_state}");
 				_builder.AwaitUnsafeOnCompleted(ref awaiter, ref this);
 				return;
 			}
@@ -169,6 +180,7 @@ struct PrintAndWaitAsync : IAsyncStateMachine
 
 	private void SetStateMachine(IAsyncStateMachine stateMachine)
 	{
+		Console.WriteLine($"[PrintAndWaitAsync.SetStateMachine] ThreadId={Thread.CurrentThread.ManagedThreadId} state={_state}");
 		_builder.SetStateMachine(stateMachine);
 	}
 

@@ -6,7 +6,7 @@ using System.Linq;
 var sequence = new EnumerableFibonacci(-2);
 foreach (var n in sequence.Take(10))
 {
-    Console.Write($"{n}, ");
+	Console.Write($"{n}, ");
 }
 Console.WriteLine($"{sequence.ElementAt(10)}");
 
