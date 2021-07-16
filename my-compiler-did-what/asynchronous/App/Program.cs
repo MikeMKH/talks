@@ -6,6 +6,7 @@ await PrintAndWaitAroundLoop(TimeSpan.FromMilliseconds(10));
 await PrintAndWaitInLoop(TimeSpan.FromMilliseconds(10));
 await PrintAndWaitInTryFinally(TimeSpan.FromMilliseconds(10));
 
+
 static async Task PrintAndWait(TimeSpan delay)
 {
     Console.WriteLine("before delays");
