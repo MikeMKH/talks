@@ -3,6 +3,8 @@
 ## My Compiler Did What? A Look compiler generated C# code.
 Look at async / await, record types, and generators in C#.
 
+  [repo](https://github.com/MikeMKH/talk-my-compiler-did-what)
+
 * July 29, 2021 at That Conference
 
   [URL was](https://that.us/activities/o1SUEA0edWoBQRJg1KX3)
