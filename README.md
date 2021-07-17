@@ -1,5 +1,19 @@
 # Public Speaking Engagements
 
+## My Compiler Did What? A Look compiler generated C# code.
+Look at async / await, record types, and generators in C#.
+
+* July 29, 2021 at That Conference
+
+  [URL was](https://that.us/activities/o1SUEA0edWoBQRJg1KX3)
+
+## Being on That On Call
+Tips to being able to get a good night while having to support your applications.
+
+* August 3, 2020 at That Conference
+
+  [URL was](https://that.us/activities/3CN84eai6792tIBcvd7L)
+
 ## Why Do Developers Have Two Keyboards?
 Stories about how to add feedback to your work.
 
