@@ -1,0 +1,15 @@
+/Users/mike/Kata/talks/my-compiler-did-what/record/App/bin/Debug/net5.0/App.deps.json
+/Users/mike/Kata/talks/my-compiler-did-what/record/App/bin/Debug/net5.0/App.runtimeconfig.json
+/Users/mike/Kata/talks/my-compiler-did-what/record/App/bin/Debug/net5.0/App.runtimeconfig.dev.json
+/Users/mike/Kata/talks/my-compiler-did-what/record/App/bin/Debug/net5.0/App.dll
+/Users/mike/Kata/talks/my-compiler-did-what/record/App/bin/Debug/net5.0/ref/App.dll
+/Users/mike/Kata/talks/my-compiler-did-what/record/App/bin/Debug/net5.0/App.pdb
+/Users/mike/Kata/talks/my-compiler-did-what/record/App/obj/Debug/net5.0/App.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mike/Kata/talks/my-compiler-did-what/record/App/obj/Debug/net5.0/App.AssemblyInfoInputs.cache
+/Users/mike/Kata/talks/my-compiler-did-what/record/App/obj/Debug/net5.0/App.AssemblyInfo.cs
+/Users/mike/Kata/talks/my-compiler-did-what/record/App/obj/Debug/net5.0/App.csproj.CoreCompileInputs.cache
+/Users/mike/Kata/talks/my-compiler-did-what/record/App/obj/Debug/net5.0/App.dll
+/Users/mike/Kata/talks/my-compiler-did-what/record/App/obj/Debug/net5.0/ref/App.dll
+/Users/mike/Kata/talks/my-compiler-did-what/record/App/obj/Debug/net5.0/App.pdb
+/Users/mike/Kata/talks/my-compiler-did-what/record/App/obj/Debug/net5.0/App.genruntimeconfig.cache
+/Users/mike/Kata/talks/my-compiler-did-what/record/App/obj/Debug/net5.0/App.csproj.AssemblyReference.cache

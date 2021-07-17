@@ -1,0 +1,15 @@
+/Users/mike/Kata/talks/my-compiler-did-what/enumerable/Simple/bin/Debug/net5.0/Simple.deps.json
+/Users/mike/Kata/talks/my-compiler-did-what/enumerable/Simple/bin/Debug/net5.0/Simple.runtimeconfig.json
+/Users/mike/Kata/talks/my-compiler-did-what/enumerable/Simple/bin/Debug/net5.0/Simple.runtimeconfig.dev.json
+/Users/mike/Kata/talks/my-compiler-did-what/enumerable/Simple/bin/Debug/net5.0/Simple.dll
+/Users/mike/Kata/talks/my-compiler-did-what/enumerable/Simple/bin/Debug/net5.0/ref/Simple.dll
+/Users/mike/Kata/talks/my-compiler-did-what/enumerable/Simple/bin/Debug/net5.0/Simple.pdb
+/Users/mike/Kata/talks/my-compiler-did-what/enumerable/Simple/obj/Debug/net5.0/Simple.csproj.AssemblyReference.cache
+/Users/mike/Kata/talks/my-compiler-did-what/enumerable/Simple/obj/Debug/net5.0/Simple.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mike/Kata/talks/my-compiler-did-what/enumerable/Simple/obj/Debug/net5.0/Simple.AssemblyInfoInputs.cache
+/Users/mike/Kata/talks/my-compiler-did-what/enumerable/Simple/obj/Debug/net5.0/Simple.AssemblyInfo.cs
+/Users/mike/Kata/talks/my-compiler-did-what/enumerable/Simple/obj/Debug/net5.0/Simple.csproj.CoreCompileInputs.cache
+/Users/mike/Kata/talks/my-compiler-did-what/enumerable/Simple/obj/Debug/net5.0/Simple.dll
+/Users/mike/Kata/talks/my-compiler-did-what/enumerable/Simple/obj/Debug/net5.0/ref/Simple.dll
+/Users/mike/Kata/talks/my-compiler-did-what/enumerable/Simple/obj/Debug/net5.0/Simple.pdb
+/Users/mike/Kata/talks/my-compiler-did-what/enumerable/Simple/obj/Debug/net5.0/Simple.genruntimeconfig.cache
