@@ -15,7 +15,7 @@
   "dependencies": {
     "folktale": "^2.0.1",
     "jshint": "^2.9.5",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "mocha": "^4.0.1"
   }
 }
